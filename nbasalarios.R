@@ -30,5 +30,5 @@ mod3 <- lm(Salary ~ NBA_DraftNumber + Age + G + MP + PER +
 
 nba$Validation <- predict(mod3, newdata=nba)
 
-nba <- na.omit(nba)
-mean(1/nrow(nba)*((nba$SalaryPredict/nba&Validation)^2))
+nba <- na.omit(nba) # Eliminamos ciertos valores NA
+mean(1/nrow(nba)*((nba$SalaryPredict/nba&Validation)^2)) # Calculamos error cuadratico medio
